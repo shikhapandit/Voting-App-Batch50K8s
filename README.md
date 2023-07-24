@@ -32,24 +32,6 @@ When pods were deleted. I observed the following:
 - Worker pod restarted once
 - when deleting this worker pod, there's no change in the frontend. Result page does not get updated.
 
-Snapshot of commands used-
-'[root@ip-172-31-14-106 k8s-specifications]# kubectl delete po db-b54cd94f4-cfkt4
-
-pod "db-b54cd94f4-cfkt4" deleted
-
-[root@ip-172-31-14-106 k8s-specifications]# kubectl get po
-
-NAME                      READY   STATUS    RESTARTS   AGE
-db-b54cd94f4-7f7rl        1/1     Running   0          4m21s
-redis-868d64d78-wk2h4     1/1     Running   0          21m
-result-5d57b59f4b-mbq2b   1/1     Running   0          21m
-vote-94849dc97-76dsj      1/1     Running   0          17m
-worker-dd46d7584-nv9bq    1/1     Running   1          10m
-
-[root@ip-172-31-14-106 k8s-specifications]# kubectl delete po worker-dd46d7584-nv9bq
-
-pod "worker-dd46d7584-nv9bq" deleted'
-
 4) Why result app stopped working after deleting db pod?
 - since db pod was deleted, the connection between result pod and db pod got lost.
 
@@ -59,7 +41,7 @@ By deleting result pod. The connection was re-established between result pod and
 - Old result pod - result-5d57b59f4b-ltk6f
 - New result pod - result-5d57b59f4b-fzdgp
    
-Some Jargons learnt so far:-
+# Some Jargons learnt so far:-
 - Docker basics
 - CKAD
 - Isolation
