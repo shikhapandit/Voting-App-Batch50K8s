@@ -1,23 +1,23 @@
 # Commands Used
-- git clone https://github.com/ashishrpandey/example-voting-app
-- 'cd /root/example-voting-app/k8s-specifications'
-- 'kubectl delete all --all'
-- 'kubectl apply -f .'
-- 'kubectl get all'
+- `git clone https://github.com/ashishrpandey/example-voting-app`
+- cd /root/example-voting-app/k8s-specifications
+- kubectl delete all --all
+- kubectl apply -f .
+- kubectl get all
 
 # My Observations
 When pods were deleted. I observed the following:
 
 1) after deleting voting pod
 - the application works fine.
-- Command used : 'kubectl delete po vote-94849dc97-6j68f'
+- Command used : kubectl delete po vote-94849dc97-6j68f
 - this pod got deleted and a new pod got created in its place.
 - Old pod - vote-94849dc97-6j68f
 - New pod - vote-94849dc97-76dsj
 
 2) after deleting worker pod
 - the applications works fine.
-- Command used : 'kubectl delete po worker-dd46d7584-kj4sg'
+- Command used : kubectl delete po worker-dd46d7584-kj4sg
 - this pod got deleted and a new pod got created in its place.
 - Old pod - worker-dd46d7584-kj4sg
 - New pod - worker-dd46d7584-nv9bq
@@ -36,7 +36,7 @@ When pods were deleted. I observed the following:
 - since db pod was deleted, the connection between result pod and db pod got lost.
 
 5) How to make result pod work again?
-By deleting result pod. The connection was re-established between result pod and db pod. after deleting the existing result pod, the new result pod was created and the voting application works fine. Command used : 'kubectl delete po result-5d57b59f4b-ltk6f'
+By deleting result pod. The connection was re-established between result pod and db pod. after deleting the existing result pod, the new result pod was created and the voting application works fine. Command used : kubectl delete po result-5d57b59f4b-ltk6f
 
 - Old result pod - result-5d57b59f4b-ltk6f
 - New result pod - result-5d57b59f4b-fzdgp
