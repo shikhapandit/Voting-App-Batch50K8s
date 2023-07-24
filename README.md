@@ -1,5 +1,5 @@
 # Commands Used
-- 'git clone https://github.com/ashishrpandey/example-voting-app'
+- git clone https://github.com/ashishrpandey/example-voting-app
 - 'cd /root/example-voting-app/k8s-specifications'
 - 'kubectl delete all --all'
 - 'kubectl apply -f .'
